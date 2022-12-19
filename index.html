@@ -341,6 +341,43 @@
     </section>
   </main>
 
+  <!-- Modal window -->
+
+  <div class="back-drop is-hidden" data-modal>
+    <div class="modal-window">
+      <button type="button" class="close-window" data-modal-close>
+        <svg class="icon" width="8" height="8">
+          <use href="./images/symbol-defs.svg#icon-close-black"></use>
+        </svg>
+      </button>
+      <h2 class="modal-title">Leave your contacts and we will call you back</h2>
+      <form class="modal-form">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" name="person-name" id="name">
+        </div>
+        <div class="form-field">
+          <label for="phone-number">Phone</label>
+          <input type="tel" name="phone-number" id="phone-number">
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+        </div>
+        <div class="form-field">
+          <label for="comment">Comment</label>
+          <textarea name="comment" id="comment" rows="4" placeholder="Text input"></textarea>
+        </div>
+        <div class="eula-field">
+          <input type="checkbox" id="eula" name="eula">
+          <label for="eula"> I accept the terms and conditions of the <a href="#" class="policy">Privacy
+              Policy</a></label>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
   <!-- Footer section -->
 
   <footer class="footer">
@@ -389,18 +426,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Modal window -->
-
-  <div class="back-drop is-hidden" data-modal>
-    <div class="modal-window">
-      <button type="button" class="close-window" data-modal-close>
-        <svg class="icon" width="8" height="8">
-          <use href="./images/symbol-defs.svg#icon-close-black"></use>
-        </svg>
-      </button>
-    </div>
-  </div>
 
   <script src="./js/modal.js"></script>
 </body>
