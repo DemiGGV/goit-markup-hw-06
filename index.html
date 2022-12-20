@@ -350,30 +350,32 @@
           <use href="./images/symbol-defs.svg#icon-close-black"></use>
         </svg>
       </button>
-      <h2 class="modal-title">Leave your contacts and we will call you back</h2>
+      <p class="modal-title">Leave your contacts and we will call you back</p>
       <form class="modal-form">
         <div class="form-field">
-          <label for="name">Name</label>
-          <input type="text" name="person-name" id="name">
+          <label for="name"><span class="field-name">Name</span></label>
+          <input type="text" name="person-name" id="name" required pattern="^[a-zA-Z]+$"
+            title="Username must be latin-symbols only.">
         </div>
         <div class="form-field">
-          <label for="phone-number">Phone</label>
+          <label for="phone-number"><span class="field-name">Phone</span></label>
           <input type="tel" name="phone-number" id="phone-number">
         </div>
         <div class="form-field">
-          <label for="email">Email</label>
+          <label for="email"><span class="field-name">Email</span></label>
           <input type="email" name="email" id="email">
         </div>
         <div class="form-field">
-          <label for="comment">Comment</label>
+          <label for="comment"><span class="field-name">Comment</span></label>
           <textarea name="comment" id="comment" rows="4" placeholder="Text input"></textarea>
         </div>
         <div class="eula-field">
           <input type="checkbox" id="eula" name="eula">
-          <label for="eula"> I accept the terms and conditions of the <a href="#" class="policy">Privacy
-              Policy</a></label>
+          <label for="eula"><span class="field-eula">I accept the terms and conditions of the <a href="#"
+                class="policy">Privacy
+                Policy</a></span></label>
         </div>
-        <input type="submit" value="Submit">
+        <input class="form-submit" type="submit" value="Send">
       </form>
     </div>
   </div>
