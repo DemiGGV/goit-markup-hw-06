@@ -5,12 +5,14 @@
     --Modal:#FCFCFC;
     --Success:#31D0AA;
     --_text:#434455;
+    --text-modal: #757575;
     --Subtle-Text:#8E8F99;
     --Accent:#E7E9FC;
     --Light:#F4F4FD;
     --bgc-white: #fff;
     --icon: #000;
     --cubic: 0.4, 0, 0.2, 1;
+    --modal-decor: rgba(33, 33, 33, 0.2)
 }
 
 .visually-hidden {
@@ -35,7 +37,9 @@
 .filter-button:hover,
 .protfolio .card-item:hover,
 .close-window:hover,
-.close-window:focus {
+.close-window:focus,
+.field-input,
+.field-icon {
     transition: 
     color 250ms cubic-bezier(var(--cubic)),
     background-color 250ms cubic-bezier(var(--cubic)),
@@ -236,22 +240,22 @@ body {
     color: var(--bgc-white);
     max-width: 492px;
     margin: 0 auto;
+    margin-bottom: 48px;
 }
 
 .order-btn {
     font-family: inherit;
     font-weight: 600;
-    font-size: inherit;
-    line-height: 1.1875;
+    font-size: 16px;
+    line-height: 1.18em;
     letter-spacing: 0.04em;
     color: var(--bgc-white);
     background-color: var(--primary-brand);
     cursor: pointer;
-    margin-top: 48px;
     min-width: 170px;
     padding: 16px 0;
     border: 1px solid transparent;
-    border-radius: 4px
+    border-radius: 4px;
 }
 
 .order-btn:hover,
@@ -369,7 +373,8 @@ body {
 
 .customers .icon,
 .close-window .icon,
-.social-icon .icon {
+.social-icon .icon,
+.field-icon {
     fill: currentColor;
 }
 
@@ -442,6 +447,12 @@ body {
     background-color: var(--Success);
 }
 
+/* ---Third footer column */
+
+.footer-subscribe {
+    margin-left: 120px;
+}
+
 /* ----Modal window with back drop styles---- */
 
 .back-drop {
@@ -464,7 +475,7 @@ body {
 .modal-window {
     position: absolute;
     min-width: 408px;
-    min-height: 576px;
+    min-height: 579px;
     top: 50%;
     left: 50%;
     padding: 24px;
@@ -475,26 +486,6 @@ body {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
     transition: all 250ms cubic-bezier(var(--cubic));
-}
-
-.modal-title {
-    margin-top: 48px;
-    font-weight: 600;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.5em;
-    text-align: center;
-    letter-spacing: 0.02em;
-}
-
-.modal-form {
-    margin: 15px 0;
-}
-
-.form-field {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 8px;
 }
 
 .back-drop.is-hidden .modal-window {
@@ -523,6 +514,135 @@ body {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+/* Modal window form styles */
+
+.modal-title {
+    margin-top: 48px;
+    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5em;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+.modal-form {
+    margin-top: 15px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17em;
+    letter-spacing: 0.01em;
+    color: #8E8F99;
+}
+
+.form-field + .form-field {
+    margin-top: 8px;
+}
+
+.field-name {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.field-input--container {
+    position: relative;
+}
+
+.field-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    color: var(--Dark);
+}
+
+.field-input {
+    outline: none;
+    min-height: 40px;
+    width: 100%;
+    padding: 8px 16px;
+    padding-left: 34px;
+    color: var(--Dark);
+    border: 1px solid var(--modal-decor);
+    border-radius: 4px;
+}
+
+.field-input.comment {
+    padding-left: 16px;
+    resize: none;
+    min-height: 120px;
+}
+
+.field-input::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.field-input:focus {
+    border: 1px solid var(--primary-brand);
+}
+
+.field-input:focus ~ .field-icon {
+    color: var(--primary-brand);
+}
+
+.eula-field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.field-eulatext {
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.33em;
+    letter-spacing: 0.04em;
+    color: var(--text-modal);
+}
+
+.eula-text {
+    margin-left: 8px;
+}
+
+.policy {
+    text-decoration: none;
+    display: inline-block;
+    color: var(--primary-brand);
+}
+
+.checkbokx {
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border: 1.25px solid var(--Dark);
+    border-radius: 2px;
+}
+
+.checkbokx .field-icon {
+    left: 50%;
+    transform: translate(-50%, -50%);;
+    color: var(--Light);
+}
+
+.form-checkbox:checked ~ .checkbokx {
+    background: var(--primary-brand);
+    border-color: var(--primary-brand);
+}
+
+.submit-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
 /*------------------- portfolio.html styles -------------------*/
 
 .protfolio {

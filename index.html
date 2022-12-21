@@ -353,29 +353,53 @@
       <p class="modal-title">Leave your contacts and we will call you back</p>
       <form class="modal-form">
         <div class="form-field">
-          <label for="name"><span class="field-name">Name</span></label>
-          <input type="text" name="person-name" id="name" required pattern="^[a-zA-Z]+$"
-            title="Username must be latin-symbols only.">
+          <label class="form-label" for="name"><span class="field-name">Name</span></label>
+          <div class="field-input--container">
+            <input autofocus type="text" name="person-name" id="name" pattern="^[a-zA-Z\s]+$"
+              title="Username must be latin-symbols only including space." class="field-input">
+            <svg class="field-icon" width="18" height="24">
+              <use href="./images/symbol-defs.svg#icon-person"></use>
+            </svg>
+          </div>
         </div>
         <div class="form-field">
-          <label for="phone-number"><span class="field-name">Phone</span></label>
-          <input type="tel" name="phone-number" id="phone-number">
+          <label class="form-label" for="phone-number"><span class="field-name">Phone</span></label>
+          <div class="field-input--container">
+            <input type="tel" name="phone-number" id="phone-number" pattern="^[0-9]+$"
+              title="Phone number. Only numbers allowed." class="field-input">
+            <svg class="field-icon" width="18" height="24">
+              <use href="./images/symbol-defs.svg#icon-phone"></use>
+            </svg>
+          </div>
         </div>
         <div class="form-field">
-          <label for="email"><span class="field-name">Email</span></label>
-          <input type="email" name="email" id="email">
+          <label class="form-label" for="email"><span class="field-name">Email</span></label>
+          <div class="field-input--container">
+            <input type="email" name="email" id="email" class="field-input">
+            <svg class="field-icon" width="18" height="24">
+              <use href="./images/symbol-defs.svg#icon-email"></use>
+            </svg>
+          </div>
         </div>
         <div class="form-field">
-          <label for="comment"><span class="field-name">Comment</span></label>
-          <textarea name="comment" id="comment" rows="4" placeholder="Text input"></textarea>
+          <label class="form-label" for="comment"><span class="field-name">Comment</span></label>
+          <textarea name="comment" id="comment" rows="4" placeholder="Text input"
+            class="field-input comment"></textarea>
         </div>
         <div class="eula-field">
-          <input type="checkbox" id="eula" name="eula">
-          <label for="eula"><span class="field-eula">I accept the terms and conditions of the <a href="#"
-                class="policy">Privacy
-                Policy</a></span></label>
+          <label for="eula" class="field-eulatext">
+            <input type="checkbox" id="eula" name="eula" class="form-checkbox visually-hidden">
+            <span class="checkbokx">
+              <svg class="field-icon" width="10" height="8">
+                <use href="./images/symbol-defs.svg#icon-check"></use>
+              </svg>
+            </span>
+            <span class="eula-text">
+              I accept the terms and conditions of the <a href="#" class="policy">Privacy Policy</a>
+            </span>
+          </label>
         </div>
-        <input class="form-submit" type="submit" value="Send">
+        <div class="submit-wrapper"><input class="form-submit order-btn" type="submit" value="Send"></div>
       </form>
     </div>
   </div>
@@ -425,6 +449,13 @@
             </a>
           </li>
         </ul>
+      </div>
+      <div class="footer-subscribe">
+        <h3 class="footer-title">Subscribe</h3>
+        <form class="footer-form">
+          <label for="mail">E-mail<input type="email" name="mail" id="mail"></label>
+          <input class="form-subscribe order-btn" type="submit" value="Subscribe">
+        </form>
       </div>
     </div>
   </footer>
