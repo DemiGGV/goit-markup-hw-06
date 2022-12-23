@@ -11,6 +11,7 @@
     --Light:#F4F4FD;
     --bgc-white: #fff;
     --icon: #000;
+    --placeholder: rgba(255, 255, 255, 0.6);
     --cubic: 0.4, 0, 0.2, 1;
     --modal-decor: rgba(33, 33, 33, 0.2)
 }
@@ -450,7 +451,50 @@ body {
 /* ---Third footer column */
 
 .footer-subscribe {
-    margin-left: 120px;
+    margin-left: 80px;
+}
+
+.footer-form {
+    display: flex;
+    align-items: center;
+}
+
+.footer-form .field-input {
+    min-width: 264px;
+    border-radius: 4px;
+    padding-left: 16px;
+
+    color: rgba(255, 255, 255, 0.6);
+    background-color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.form-subscribe {
+    /* position: relative; */
+    margin-left: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bgc-white);
+    padding: 8px 24px;
+    line-height: 1.5;
+}
+
+input.field-input::placeholder {
+    font-size: 12px;
+    line-height: 2;
+    color: var(--placeholder);
+}
+.btn-text {
+    
+}
+.subscribe-icon {
+    /* position: absolute;
+    color: var(--bgc-white);
+    right: 0; */
+    margin-left: 16px;
+    fill: currentColor;
 }
 
 /* ----Modal window with back drop styles---- */
@@ -462,6 +506,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(46, 47, 66, 0.4);
+    backdrop-filter: blur(3px);
 
     opacity: 1;
     transition: opacity 250ms cubic-bezier(var(--cubic));
@@ -485,7 +530,9 @@ body {
 
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
-    transition: all 250ms cubic-bezier(var(--cubic));
+    transition: 
+        transform 250ms cubic-bezier(var(--cubic)),
+        opacity 250ms cubic-bezier(var(--cubic));
 }
 
 .back-drop.is-hidden .modal-window {
@@ -570,6 +617,8 @@ body {
     color: var(--Dark);
     border: 1px solid var(--modal-decor);
     border-radius: 4px;
+    font-size: 18px;
+    line-height: 1.125;
 }
 
 .field-input.comment {
@@ -578,8 +627,10 @@ body {
     min-height: 120px;
 }
 
-.field-input::placeholder {
+textarea.field-input::placeholder {
     color: rgba(117, 117, 117, 0.5);
+    font-size: 12px;
+    line-height: 1.17;
 }
 
 .field-input:focus {

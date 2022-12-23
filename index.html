@@ -399,7 +399,8 @@
             </span>
           </label>
         </div>
-        <div class="submit-wrapper"><input class="form-submit order-btn" type="submit" value="Send"></div>
+        <div class="submit-wrapper"><input class="form-submit order-btn data-modal-close" type="submit" value="Send">
+        </div>
       </form>
     </div>
   </div>
@@ -453,8 +454,13 @@
       <div class="footer-subscribe">
         <h3 class="footer-title">Subscribe</h3>
         <form class="footer-form">
-          <label for="mail">E-mail<input type="email" name="mail" id="mail"></label>
-          <input class="form-subscribe order-btn" type="submit" value="Subscribe">
+          <label class="form-label"><input type="email" name="mail" placeholder="E-mail" class="field-input"></label>
+          <button class="form-subscribe order-btn" type="submit">
+            <span class="btn-text">Subscribe</span>
+            <svg class="subscribe-icon" width="24" height="20">
+              <use href="./images/symbol-defs.svg#icon-send"></use>
+            </svg>
+          </button>
         </form>
       </div>
     </div>
