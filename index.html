@@ -388,7 +388,8 @@
         </div>
         <div class="eula-field">
           <label for="eula" class="field-eulatext">
-            <input type="checkbox" id="eula" name="eula" class="form-checkbox visually-hidden">
+            <input type="checkbox" id="eula" name="eula" required title="Need to agry EULA first."
+              class="form-checkbox visually-hidden">
             <span class="checkbokx">
               <svg class="field-icon" width="10" height="8">
                 <use href="./images/symbol-defs.svg#icon-check"></use>
@@ -455,7 +456,7 @@
         <h3 class="footer-title">Subscribe</h3>
         <form class="footer-form">
           <label class="form-label"><input type="email" name="mail" placeholder="E-mail" class="field-input"></label>
-          <button class="form-subscribe order-btn" type="submit">
+          <button class="form-subscribe order-btn" type="submit" data-modal-close>
             <span class="btn-text">Subscribe</span>
             <svg class="subscribe-icon" width="24" height="20">
               <use href="./images/symbol-defs.svg#icon-send"></use>
